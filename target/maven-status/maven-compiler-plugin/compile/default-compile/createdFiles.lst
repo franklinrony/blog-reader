@@ -1,0 +1,5 @@
+sv\gob\bandesal\blog\entities\Usuario.class
+sv\gob\bandesal\blog\entities\Blog.class
+sv\gob\bandesal\blog\rest\JavaEE8Resource.class
+sv\gob\bandesal\blog\JAXRSConfiguration.class
+sv\gob\bandesal\blog\entities\Reader.class
