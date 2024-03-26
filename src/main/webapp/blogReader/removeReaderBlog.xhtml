@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:p="http://primefaces.org/ui"> 
+    <ui:composition>
+
+        <p:dialog id="createEditDlg2" widgetVar="createEditDlg2" modal="true" width="450"
+                  resizable="false" appendTo="@(body)" header="QUITAR READER A BLOG">
+            <p:messages id="message" showDetail="true" showSummary="false"   closable="true">
+                <p:autoUpdate />
+            </p:messages>    
+            <h:form id="crearEditarForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="true" styleClass="ui-panelgrid-blank ui-fluid">
+                                                    
+
+                        <p:outputLabel for="selBlog" style="font-weight: bold;" value="Blog"  />
+                        <p:selectOneMenu id="selBlog" value="#{readerToBlogController.blogSeleccionado}"
+                                         autoWidth="true"
+                                          converterMessage="No se pudo obtener el elemento Seleccionado"
+                                         required="true" filter="true" filterMatchMode="contains">                          
+                            <f:converter binding="#{blogConverter}"/>
+                            <f:selectItem itemValue="#{null}" itemLabel="Seleccione un Blog"/>
+                            <f:selectItems var="blog" value="#{readerToBlogController.listaBlogs}" 
+                                           itemValue="#{blog}" itemLabel="#{blog.title}"/>
+                            <p:ajax event="change" 
+                                    update="selReader"
+                                    />
+                        </p:selectOneMenu>                   
+
+                        <p:outputLabel for="selReader" style="font-weight: bold;" value="Reader"  />
+                        <p:selectOneMenu id="selReader" value="#{readerToBlogController.readerSeleccionado}" 
+                                         autoWidth="true" 
+                                         converterMessage="No se pudo obtener el elemento Seleccionado"
+                                         required="true" filter="true" filterMatchMode="contains">  
+                            <f:converter binding="#{readerConverter}"/>
+                            <f:selectItem itemValue="#{null}" itemLabel="Seleccione un reader"/>
+                            <f:selectItems var="reader" value="#{readerToBlogController.blogSeleccionado.readers}" 
+                                           itemValue="#{reader}" itemLabel="#{reader.name}"/>
+                        </p:selectOneMenu>
+
+                    </p:panelGrid>
+                    <h:panelGroup class="flex align-items-center justify-content-center">
+                        <p:commandButton     actionListener="#{readerToBlogController.borrar()}" 
+                                           value="Remover" icon="fa fas fa-user-minus"  update="message, frmBlogReader" oncomplete="PF('blockUI').hide();" 
+                                           styleClass="m-2" class="ui-button-danger" onstart="PF('blockUI').show();"/>
+                   
+                        <p:commandButton immediate="true" onclick="PF('createEditDlg2').hide()"  actionListener="#{readerToBlogController.init()}"
+                                         value="Cancelar" icon="fa fa-fw fa-close"   update="frmBlogReader" oncomplete="PF('blockUI').hide();" 
+                                         styleClass="m-2" onstart="PF('blockUI').show();"/>
+                    </h:panelGroup>
+                </h:panelGroup>
+
+            </h:form>
+        </p:dialog>
+    </ui:composition>
+</html>

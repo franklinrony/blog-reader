@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:p="http://primefaces.org/ui"> 
+    <ui:composition>
+
+        <p:dialog id="createEditDlg" widgetVar="createEditDlg" modal="true" resizable="false" appendTo="@(body)" header="#{readerController.readerSeleccionado.id!= null ? 'EDICION':'CREACION'} DE BLOG">
+            <p:messages id="message" showDetail="true" showSummary="false"   closable="true">
+                <p:autoUpdate />
+            </p:messages>    
+            <h:form id="crearEditarForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{blogController.blogSeleccionado!= null}" styleClass="ui-panelgrid-blank ui-fluid">
+                        <p:outputLabel  style="font-weight: bold;" value="Id" rendered="#{blogController.blogSeleccionado.id!= null}"/>
+                        <p:outputLabel  style="width: 300px;" value="#{blogController.blogSeleccionado.id}"  rendered="#{blogController.blogSeleccionado.id != null}"/>                                                 
+
+                        <p:outputLabel for="nombre" style="font-weight: bold;" value="Titulo del Blog"  />
+                        <p:inputText id="nombre"  value="#{blogController.blogSeleccionado.title}"/>                   
+
+                        <p:outputLabel for="descripcion" style="font-weight: bold;" value="Descripcion del Blog"  />
+                        <p:inputTextarea id="descripcion" rows="5" cols="30" counter="display2" maxlength="4000"
+                         counterTemplate="{0} Caracteres restantes." autoResize="false"
+                                         value="#{blogController.blogSeleccionado.description}"/>
+                        <span></span>
+                        <h:outputText id="display2" class="block" />
+
+                    </p:panelGrid>
+                    <h:panelGroup class="flex align-items-center justify-content-center">
+                        <p:commandButton   rendered="#{blogController.blogSeleccionado.id == null}"  actionListener="#{blogController.crear()}" 
+                                           value="Guardar" icon="fa fa-fw fa-save"  update="message, frmBlog" oncomplete="PF('blockUI').hide();" 
+                                           styleClass="m-2" onstart="PF('blockUI').show();"/>
+                        <p:commandButton   rendered="#{blogController.blogSeleccionado.id!= null}" actionListener="#{blogController.editar()}" 
+                                           value="Editar" icon="fa fa-fw fa-edit"  update="message, frmBlog" oncomplete="PF('blockUI').hide();"
+                                           styleClass="m-2" onstart="PF('blockUI').show();"/>
+                        <p:commandButton immediate="true" onclick="PF('createEditDlg').hide()"  actionListener="#{blogController.init()}"
+                                         value="Cancelar" icon="fa fa-fw fa-close"   update="frmBlog" oncomplete="PF('blockUI').hide();" 
+                                         styleClass="m-2" onstart="PF('blockUI').show();"/>
+                    </h:panelGroup>
+                </h:panelGroup>
+
+            </h:form>
+        </p:dialog>
+    </ui:composition>
+</html>

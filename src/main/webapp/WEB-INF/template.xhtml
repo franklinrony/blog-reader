@@ -37,7 +37,8 @@
     </h:head>
 
     <h:body styleClass="#{guestPreferences.inputStyleClass}">
-         <p:growl id="growl" showDetail="true" life="10000" />
+
+        <p:growl id="growl" showDetail="true" life="10000" />
         <div class="layout-wrapper #{guestPreferences.layoutConfig}">
             <ui:include src="./sidebar.xhtml" />
 
@@ -47,13 +48,12 @@
                 <ui:include src="./breadcrumb.xhtml" />
 
                 <div class="layout-content">
-                    <ui:insert name="content"/>
+                    <p:outputPanel id="panel">
+                        <ui:insert name="content"/>
+                    </p:outputPanel>
                 </div>
-
                 <ui:include src="./footer.xhtml" />
-
                 <ui:include src="./config.xhtml" />
-
                 <div class="layout-main-mask"></div>
             </div>
         </div>

@@ -4,7 +4,7 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
                 template="/WEB-INF/template.xhtml">
-                
+
     <ui:define name="title">Blogs</ui:define>
 
     <ui:define name="viewname">
@@ -17,12 +17,63 @@
         <div class="grid">
             <div class="col-12">
                 <div class="card">
-                    <h4>Empty Page</h4>
-                    <p>This is your empty page template to start building beautiful applications.</p>
+                    <h4>ADMINISTRACION BLOGS</h4>
+                    <h:form id="frmBlog">
+                        <p:panel header="Listado de Blogs">
+                            <p:dataTable   id="datalist" value="#{blogController.listaBlogs}" var="blog"  
+                                           selectionMode="single" selection="#{blogController.blogSeleccionado}"
+                                           paginator="true"
+                                           rowKey="#{blog.id}"
+                                           rows="10"
+                                           rowsPerPageTemplate="10,20,30,40,50"
+                                           emptyMessage="No se encontraron registros"
+                                           reflow="true">
+
+                                <p:ajax event="rowSelect"   update="btnCrear btnBorrar btnEditar"/>
+                                <p:ajax event="rowUnselect" update="btnCrear btnBorrar btnEditar"/>
+                                <p:messages globalOnly="true"/>
+                                <p:column headerText="Id"  style="width: 90px; text-align: center;" filterStyle="width: 25%; text-align: center;" 
+                                          sortBy="#{blog.id}" filterBy="#{blog.id}">                       
+                                    <p:outputLabel value="#{blog.id}"/>
+                                </p:column>                       
+                                <p:column headerText="Titulo" style="width: 40%; text-align: left" 
+                                          sortBy="#{blog.title}"  filterBy="#{blog.title}">                       
+                                    <p:outputLabel value="#{blog.title}"/>
+                                </p:column>   
+                                <p:column headerText="Descripcion" style="width: 40%; text-align: left" 
+                                          sortBy="#{blog.description}"  filterBy="#{blog.description}">                       
+                                    <p:outputLabel value="#{blog.description}"/>
+                                </p:column>
+
+                                <f:facet name="footer">
+                                    <div class="flex align-items-center justify-content-center">
+                                        <p:commandButton id="btnCrear" icon="pi pi-book" styleClass="m-2"   value="Nuevo"  
+                                                         resetValues="true" actionListener="#{blogController.nuevo()}"  update=":createEditDlg frmBlog" oncomplete="PF('createEditDlg').show()"/>
+                                        <p:commandButton id="btnEditar"   icon="pi pi-pencil" styleClass="m-2" value="Editar"  
+                                                         resetValues="true" update=":createEditDlg" oncomplete="PF('createEditDlg').show()" 
+                                                         disabled="#{empty blogController.blogSeleccionado}"/>
+                                        <p:commandButton id="btnBorrar" styleClass="ui-button-danger"  icon="pi pi-minus-circle" value="Borrar" update=":createEditDlg frmBlog"  
+                                                         actionListener="#{blogController.borrar()}"  onstart="PF('blockUI').show();" oncomplete="PF('blockUI').hide();"
+                                                         disabled="#{empty blogController.blogSeleccionado}">
+                                            <p:confirm header="Confirmacion" message="¿Desea borrar el registro? #{blogController.blogSeleccionado.title}" icon="pi pi-info-circle"/>
+                                        </p:commandButton>
+                                        <!-- Confirmacion dialog -->
+                                        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350">
+                                            <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+                                            <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" />
+                                        </p:confirmDialog>
+                                    </div>
+                                </f:facet>
+                            </p:dataTable>
+                        </p:panel>
+
+                    </h:form>
+                    <ui:include src="createEditBlog.xhtml"/>   
+
                 </div>
             </div>
         </div>
-        
+
     </ui:define>
 
 </ui:composition>
