@@ -12,7 +12,7 @@
                 <i class="pi pi-lock"/>
             </a>
             <a href="dashboard.xhtml">
-                <p:graphicImage name="images/logo-mirage@2x.png" library="mirage-layout" />
+                <p:graphicImage name="images/LogoBANDESAL_.png" library="mirage-layout" />
                 <span class="app-name">BANDESAL</span>
             </a>
         </div>
@@ -20,7 +20,7 @@
         <div class="layout-menu-container">
             <h:form id="menuform">
                 <pm:menu>
-                    <p:menuitem id="m_dashboard" value="Dashboard" icon="pi pi-fw pi-home" outcome="/dashboard" />
+                    <p:menuitem id="m_inicio" value="Inicio" icon="pi pi-fw pi-home" outcome="/dashboard" />
          
                 
                     <p:submenu id="m_default" label="Pages" icon="pi pi-fw pi-copy">
@@ -35,8 +35,10 @@
                         <p:menuitem id="m_empty" value="Empty" icon="pi pi-fw pi-clone" outcome="/empty" />
                     </p:submenu>
                
-                    <p:menuitem id="m_doc" value="Documentation" icon="pi pi-fw pi-file" outcome="/documentation"/>
-                    <p:menuitem id="m_buy" value="Lectores" icon="pi pi-fw pi-money-bill" url="https://www.primefaces.org/store" />
+                    <p:menuitem id="m_lectores" value="Lectores" icon="pi pi-fw pi-users" outcome="/reader/readerList" />
+                    <p:menuitem id="m_blogs" value="Blogs" icon="pi pi-fw pi-book" outcome="/blog/blogList" />
+                    <p:menuitem id="m_lect_blog" value="Lectores por blog" icon="pi pi-fw pi-list" outcome="/blogReader/blogReaderList" />
+
                 </pm:menu>
             </h:form>
         </div>

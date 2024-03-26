@@ -4,25 +4,73 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
                 template="/WEB-INF/template.xhtml">
-                
-    <ui:define name="title">Empty Page</ui:define>
+
+    <ui:define name="title">Lectores</ui:define>
 
     <ui:define name="viewname">
-        <li>Pages</li> 
+        <li>Home</li> 
         <li><i class="pi pi-angle-right"/></li>
-        <li><p:link outcome="/empty">Empty</p:link></li>
+        <li><p:link outcome="/reader/readerList">Lectores</p:link></li>
     </ui:define>
 
     <ui:define name="content">
         <div class="grid">
             <div class="col-12">
-                <div class="card">
-                    <h4>Empty Page</h4>
-                    <p>This is your empty page template to start building beautiful applications.</p>
-                </div>
+                <p:outputPanel id="panel">
+
+                    <div class="card">
+                        <h4>ADMINISTRACION LECTORES</h4>
+                        <h:form id="frmReader">
+                            <p:panel header="Listado de Lectores">
+                                <p:dataTable   id="datalist" value="#{readerController.listaReaders}" var="reader"  
+                                               selectionMode="single" selection="#{readerController.readerSeleccionado}"
+                                               paginator="true"
+                                               rowKey="#{reader.id}"
+                                               rows="10"
+                                               rowsPerPageTemplate="10,20,30,40,50"
+                                               emptyMessage="No se encontraron registros"
+                                               reflow="true">
+
+                                    <p:ajax event="rowSelect"   update="btnCrear btnBorrar btnEditar"/>
+                                    <p:ajax event="rowUnselect" update="btnCrear btnBorrar btnEditar"/>
+                                    <p:messages globalOnly="true"/>
+                                    <p:column headerText="Id"  style="width: 90px; text-align: center;" filterStyle="width: 25%; text-align: center;" 
+                                              sortBy="#{reader.id}" filterBy="#{reader.id}">                       
+                                        <p:outputLabel value="#{reader.id}"/>
+                                    </p:column>                       
+                                    <p:column headerText="Usuario" style="width: 80%; text-align: left" 
+                                              sortBy="#{reader.name}"  filterBy="#{reader.name}">                       
+                                        <p:outputLabel value="#{reader.name}"/>
+                                    </p:column>        
+
+                                    <f:facet name="footer">
+                                        <div class="flex align-items-center justify-content-center">
+                                            <p:commandButton id="btnCrear" icon="pi pi-user-plus" styleClass="m-2"   value="Nuevo"  
+                                                             resetValues="true" actionListener="#{readerController.nuevo()}"  update=":createEditDlg frmReader" oncomplete="PF('createEditDlg').show()"/>
+                                            <p:commandButton id="btnEditar"   icon="pi pi-user-edit" styleClass="m-2" value="Editar"  
+                                                             resetValues="true" update=":createEditDlg" oncomplete="PF('createEditDlg').show()" disabled="#{empty readerController.readerSeleccionado}"/>
+                                            <p:commandButton id="btnBorrar" styleClass="ui-button-danger"  icon="pi pi-user-minus" value="Borrar" update=":createEditDlg frmReader"  actionListener="#{readerController.borrar()}"  onstart="PF('blockUI').show();" oncomplete="PF('blockUI').hide();"
+                                                             disabled="#{empty readerController.readerSeleccionado}">
+                                                <p:confirm header="Confirmacion" message="¿Desea borrar el registro? #{readerController.readerSeleccionado.name}" icon="pi pi-info-circle"/>
+                                            </p:commandButton>
+                                            <!-- Confirmacion dialog -->
+                                            <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350">
+                                                <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+                                                <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" />
+                                            </p:confirmDialog>
+                                        </div>
+                                    </f:facet>
+                                </p:dataTable>
+                            </p:panel>
+
+                        </h:form>
+                        <ui:include src="createEditReader.xhtml"/>   
+
+                    </div>
+                </p:outputPanel>
             </div>
         </div>
-        
+
     </ui:define>
 
 </ui:composition>

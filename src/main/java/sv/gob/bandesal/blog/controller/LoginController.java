@@ -36,7 +36,7 @@ public class LoginController implements Serializable {
         usuario = new Usuario();
     }
 
-    public void login() {
+  /*  public void login() {
         if (!this.validar()) {
             boolean resultado = usuarioFacade.authenticateUser(usuario.getUsuario().trim(), usuario.getPassword().trim());
             if (resultado) {
@@ -55,7 +55,7 @@ public class LoginController implements Serializable {
             }
         }
 
-    }
+    }*/
 
     private boolean validar() {
         boolean errores = false;
