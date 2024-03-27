@@ -17,11 +17,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -45,24 +42,19 @@ public class Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "USUARIO_SQ")
     private BigDecimal id;
     @Basic(optional = false)
-    @Size(min = 1, max = 50)
     @Column(name = "USUARIO")
     private String usuario;
-    @Size(max = 90)
     @Column(name = "NOMBRES")
     private String nombres;
-    @Size(max = 90)
     @Column(name = "APELLIDOS")
     private String apellidos;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
-    @Size(max = 90)
     @Column(name = "EMAIL")
     private String email;
     @Basic(optional = false)
-    @Size(min = 1, max = 300)
     @Column(name = "PASSWORD")
     private String password;
-    @JoinTable(name = "USUARIO_ROL", joinColumns = {
+    @JoinTable(name = "USUARIO_ROL",schema ="SISTEMAS" , joinColumns = {
         @JoinColumn(name = "USUARIO_ID", referencedColumnName = "ID")}, inverseJoinColumns = {
         @JoinColumn(name = "ROL_ID", referencedColumnName = "ID")})
     @ManyToMany

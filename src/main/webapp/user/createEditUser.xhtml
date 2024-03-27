@@ -25,33 +25,47 @@ and open the template in the editor.
 
                         <p:outputLabel for="nombres" style="font-weight: bold;" value="Nombres"  />
                         <p:inputText id="nombres"  value="#{usuarioController.usuarioSeleccionado.nombres}"/>
-                        
-                        <p:outputLabel for="apellidos" style="font-weight: bold;" value="apellidos"  />
+
+                        <p:outputLabel for="apellidos" style="font-weight: bold;" value="Apellidos"  />
                         <p:inputText id="apellidos"  value="#{usuarioController.usuarioSeleccionado.apellidos}"/>
-                        
-                        <p:outputLabel for="usuario" style="font-weight: bold;" value="usuario"  />
+
+                        <p:outputLabel for="usuario" style="font-weight: bold;" value="Usuario"  />
                         <p:inputText id="usuario"  value="#{usuarioController.usuarioSeleccionado.usuario}"/>
-                        
-                        <p:outputLabel for="email" style="font-weight: bold;" value="email"  />
+
+                        <p:outputLabel for="email" style="font-weight: bold;" value="Email"  />
                         <p:inputText id="email"  value="#{usuarioController.usuarioSeleccionado.email}"/>
-                        
-                        <p:outputLabel for="password" style="font-weight: bold;" value="password"  />
-                        <p:inputText id="password"  value="#{usuarioController.usuarioSeleccionado.password}"/>
+
+                        <p:outputLabel for="password" style="font-weight: bold;" value="Password"  />
+                        <p:password id="password" match="re_password"  value="#{usuarioController.password}"/>
+
+                        <p:outputLabel for="re_password" style="font-weight: bold;" value="Repetir Password"  />
+                        <p:password id="re_password"  value="#{usuarioController.rePassword}"/>
+
+                        <p:outputLabel for="selRol" style="font-weight: bold;" value="Rol"  />
+                        <p:selectOneMenu id="selRol" value="#{usuarioController.rolSeleccionado}"
+                                         autoWidth="true"
+                                         converterMessage="No se pudo obtener el elemento Seleccionado"
+                                         required="true" filter="true" filterMatchMode="contains">                          
+                            <f:converter binding="#{rolConverter}"/>
+                            <f:selectItem itemValue="#{null}" itemLabel="Seleccione un rol"/>
+                            <f:selectItems var="rol" value="#{usuarioController.listaRoles}" 
+                                           itemValue="#{rol}" itemLabel="#{rol.descripcion}"/>
+                        </p:selectOneMenu> 
                     </p:panelGrid>
-                    
+
                     <h:panelGroup class="flex align-items-center justify-content-center">
                         <p:commandButton   rendered="#{usuarioController.usuarioSeleccionado.id == null}"  actionListener="#{usuarioController.crear()}" 
                                            value="Guardar" icon="fa fa-fw fa-save"  update="message, frmUsuario" oncomplete="PF('blockUI').hide();" 
                                            styleClass="m-2" onstart="PF('blockUI').show();"/>
                         <p:commandButton   rendered="#{readerController.readerSeleccionado.id!= null}" actionListener="#{readerController.editar()}" 
                                            value="Editar" icon="fa fa-fw fa-edit"  update="message, frmUsuario" oncomplete="PF('blockUI').hide();"
-                                          styleClass="m-2" onstart="PF('blockUI').show();"/>
+                                           styleClass="m-2" onstart="PF('blockUI').show();"/>
                         <p:commandButton immediate="true" onclick="PF('createEditDlg').hide()"  actionListener="#{readerController.init()}"
                                          value="Cancelar" icon="fa fa-fw fa-close"   update="frmUsuario" oncomplete="PF('blockUI').hide();" 
                                          styleClass="m-2" onstart="PF('blockUI').show();"/>
                     </h:panelGroup>
                 </h:panelGroup>
-              
+
             </h:form>
         </p:dialog>
     </ui:composition>
