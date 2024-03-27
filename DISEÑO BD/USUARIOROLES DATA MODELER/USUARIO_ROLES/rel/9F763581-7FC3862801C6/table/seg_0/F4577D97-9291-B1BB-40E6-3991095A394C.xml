@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F4577D97-9291-B1BB-40E6-3991095A394C" name="USUARIO">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<generatorID>6A4A28B1-9B5F-D425-0F56-02B1534F1F27</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="114557D3-D3C6-3E19-6AB3-E4C41A4B328B">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<generatorID>6A4D8158-9A3E-CC34-30DF-FB39109A1F0D</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USUARIO" id="639E1599-478E-D74B-D683-33232D38CF21">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<generatorID>F16ED48A-95B8-480E-D8B4-8DF35893A402</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRES" id="DF42AB45-CEDB-2E37-B2CA-1D4918633FCA">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<generatorID>3BC4D3C4-88E4-97F7-3FEF-7158E1BAECCE</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>90</dataTypeSize>
+<ownDataTypeParameters>90,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="APELLIDOS" id="A8CB0635-9ED0-164C-CAB2-19589DEEBDAB">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<generatorID>F6C82C71-7C29-276B-7F09-F3AD1292AABD</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>90</dataTypeSize>
+<ownDataTypeParameters>90,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL" id="1F7F8621-73FA-8654-8F52-3C333580D4AC">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<generatorID>0E436BE7-F65E-2416-097A-4DA30D41BEE6</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>90</dataTypeSize>
+<ownDataTypeParameters>90,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PASSWORD" id="D7A5F987-7EB8-363E-2FE9-755DF45002C1">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<generatorID>B29045B0-3EC8-36BB-1913-A2A12D78D41E</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4FBBBFE4-2525-2CE3-869F-E69C757F4481" name="USUARIO_PK">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<generatorID>5AA0BE62-8FF8-B8A5-42D2-4974A26F655D</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="114557D3-D3C6-3E19-6AB3-E4C41A4B328B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
