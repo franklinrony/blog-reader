@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9771EAD9-B85A-B253-5C7B-B2CC98B022BA" name="BLOGS">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:45:54 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="5AEC75C4-4A8B-BF16-7128-39E5F3F7B0DD">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:46:11 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="TITLE" id="13999702-E5B1-0211-4FF9-090F9153A687">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:46:29 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+</Attribute>
+<Attribute name="DESCRIPTION" id="BAC75769-9DE9-A17E-0758-1A4D9791E85F">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:46:51 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F1197DD5-90F7-FBBA-66D7-0A4A93FAA371" name="BLOGS PK">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:46:27 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5AEC75C4-4A8B-BF16-7128-39E5F3F7B0DD</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

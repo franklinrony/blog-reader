@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8421B1D6-3ECD-33A8-D408-DFB0B28E3409" name="USUARIO">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:04:25 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="5F7BECD8-5A05-8C40-64B0-A24DDA7E60EF">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:04:32 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="USUARIO" id="985642D4-AAAD-60BD-CC5D-FD2F67EFBAFD">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:04:43 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+</Attribute>
+<Attribute name="PASSWORD" id="3C61E947-0B44-5490-B5D8-B796E93CAAEE">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:05:20 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+</Attribute>
+<Attribute name="EMAIL" id="FAA3D0C7-6E01-38A6-D930-2E22F789372C">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:05:07 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="31D876BC-489F-CF24-04CA-EEE1E97565E8" name="USUARIO PK">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:04:41 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5F7BECD8-5A05-8C40-64B0-A24DDA7E60EF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

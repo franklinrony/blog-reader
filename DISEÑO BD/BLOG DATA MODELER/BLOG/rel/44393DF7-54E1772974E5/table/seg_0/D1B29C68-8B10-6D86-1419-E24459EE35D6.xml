@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D1B29C68-8B10-6D86-1419-E24459EE35D6" name="BLOGS_READERS">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:51:46 UTC</createdTime>
+<generatorID>9CFD2D85-EAC8-D787-DF1E-94AF4DDE04C1</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="READERS_ID" id="970F6D2D-0C10-2D16-CA8B-CF50627B9461">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:51:46 UTC</createdTime>
+<generatorID>8C014A22-92E9-BD64-7B5C-C644D1DF1C8B</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>95CAF0D4-412C-DD92-B186-6B95DCBD1C6A</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F6DED9ED-4DDA-9323-BFAA-C7F9879136D2" referredColumn="95CAF0D4-412C-DD92-B186-6B95DCBD1C6A"/>
+</associations>
+</Column>
+<Column name="BLOGS_ID" id="6AF42B85-C852-0242-1F0A-889F18D550B5">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:51:46 UTC</createdTime>
+<generatorID>5CD2F74E-6C16-6880-F24D-F67EA00BCB2D</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>4F8DDDC2-BF29-1542-4D27-728DFB980415</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5B60FDB5-48C6-3016-3B75-187B3F550C43" referredColumn="4F8DDDC2-BF29-1542-4D27-728DFB980415"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="60A5B142-CF40-A1B0-FCAD-9E46AFB45217" name="BLOGS_READERS_PK">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:53:14 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="970F6D2D-0C10-2D16-CA8B-CF50627B9461"/>
+<colUsage columnID="6AF42B85-C852-0242-1F0A-889F18D550B5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3930606D-710B-1D1E-F958-F8CEFD0AEB4C" name="BLOGS_READERS_BLOGS_FK">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:51:46 UTC</createdTime>
+<generatorID>77B213B7-472C-53AA-E3DF-30A9CA8BF72E</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6AF42B85-C852-0242-1F0A-889F18D550B5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A80A0350-7F64-FD70-0DFE-DFE37C86709A" name="BLOGS_READERS_READERS_FK">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:51:47 UTC</createdTime>
+<generatorID>18CB903C-9D78-D797-0CE1-5EEF0D4E0E33</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="970F6D2D-0C10-2D16-CA8B-CF50627B9461"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

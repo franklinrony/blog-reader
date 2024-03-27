@@ -3,6 +3,8 @@
   <!-- Define Persistence Unit -->
   <persistence-unit name="blogPU" transaction-type="JTA">
     <jta-data-source>java:/blogDS</jta-data-source>
+    <class>sv.gob.bandesal.blog.entities.Usuario</class>
+    <class>sv.gob.bandesal.blog.entities.Rol</class>
     <properties>
     </properties>
   </persistence-unit>

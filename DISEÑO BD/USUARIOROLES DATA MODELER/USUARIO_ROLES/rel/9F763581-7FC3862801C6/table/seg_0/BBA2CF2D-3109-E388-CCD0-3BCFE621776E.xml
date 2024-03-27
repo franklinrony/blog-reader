@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BBA2CF2D-3109-E388-CCD0-3BCFE621776E" name="ROL">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<generatorID>35472375-C642-E9C5-CD58-A9227347BF94</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="1A3ABBB4-7DF9-C883-DE03-388CB264B383">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<generatorID>42DDEDD6-569A-96B5-A591-0C240738A588</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPCION" id="66621BF5-06C0-FC51-A6D9-61FA33B75725">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<generatorID>4F8DE5DB-0C9F-005B-C195-9D7D1CB6165C</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="716C55C8-3A41-7171-3D7B-B3FEE3EB15C6" name="ROL_PK">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<generatorID>151AB613-29F5-C97D-00E5-FD60263C5122</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1A3ABBB4-7DF9-C883-DE03-388CB264B383"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6A4A28B1-9B5F-D425-0F56-02B1534F1F27" name="USUARIO">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:01:50 UTC</createdTime>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<engineerTo>
+<item key="9F763581-4EBB-43E8-EE38-7FC3862801C6" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="6A4D8158-9A3E-CC34-30DF-FB39109A1F0D">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:02:32 UTC</createdTime>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="9F763581-4EBB-43E8-EE38-7FC3862801C6" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="USUARIO" id="F16ED48A-95B8-480E-D8B4-8DF35893A402">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:02:47 UTC</createdTime>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="9F763581-4EBB-43E8-EE38-7FC3862801C6" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+</Attribute>
+<Attribute name="PASSWORD" id="B29045B0-3EC8-36BB-1913-A2A12D78D41E">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:03:14 UTC</createdTime>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="9F763581-4EBB-43E8-EE38-7FC3862801C6" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+</Attribute>
+<Attribute name="SALT" id="F208B220-5126-BACA-C0F5-708EB65C216B">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-18 04:03:39 UTC</createdTime>
+<comment>Para hash del password</comment>
+<generatorID>2C29840F-E4AD-3F32-73B3-F4185B1194C0</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<engineerTo>
+<item key="9F763581-4EBB-43E8-EE38-7FC3862801C6" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+</Attribute>
+<Attribute name="ITERATION COUNT" id="C91DD67D-E3A4-99A2-35C4-CAC5D11E496A">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-18 04:03:39 UTC</createdTime>
+<comment>Para hash del password</comment>
+<generatorID>26D9D329-CCFB-527D-C073-24310641F308</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<engineerTo>
+<item key="9F763581-4EBB-43E8-EE38-7FC3862801C6" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="NOMBRES" id="3BC4D3C4-88E4-97F7-3FEF-7158E1BAECCE">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:03:42 UTC</createdTime>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="9F763581-4EBB-43E8-EE38-7FC3862801C6" value="false"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>90</dataTypeSize>
+</Attribute>
+<Attribute name="APELLIDOS" id="F6C82C71-7C29-276B-7F09-F3AD1292AABD">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:07:12 UTC</createdTime>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="9F763581-4EBB-43E8-EE38-7FC3862801C6" value="false"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>90</dataTypeSize>
+</Attribute>
+<Attribute name="EMAIL" id="0E436BE7-F65E-2416-097A-4DA30D41BEE6">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:07:30 UTC</createdTime>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="9F763581-4EBB-43E8-EE38-7FC3862801C6" value="false"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>90</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5AA0BE62-8FF8-B8A5-42D2-4974A26F655D" name="USUARIO PK">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:02:43 UTC</createdTime>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="9F763581-4EBB-43E8-EE38-7FC3862801C6" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6A4D8158-9A3E-CC34-30DF-FB39109A1F0D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

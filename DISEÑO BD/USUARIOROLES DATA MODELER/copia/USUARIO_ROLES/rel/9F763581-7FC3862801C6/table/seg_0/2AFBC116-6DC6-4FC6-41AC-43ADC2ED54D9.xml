@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2AFBC116-6DC6-4FC6-41AC-43ADC2ED54D9" name="USUARIO_ROL">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="USUARIO_ID" id="12FBA4F1-3F74-B9F5-12A5-1417A8E0E57B">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>114557D3-D3C6-3E19-6AB3-E4C41A4B328B</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CFB1DDFE-4329-7F71-A51F-19F349FEEB15" referredColumn="114557D3-D3C6-3E19-6AB3-E4C41A4B328B"/>
+</associations>
+</Column>
+<Column name="ROL_ID" id="3AE4631D-3406-A208-16E7-19A74E393C9B">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>1A3ABBB4-7DF9-C883-DE03-388CB264B383</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E6AEFAD7-A012-F837-25FE-8480F49B43AA" referredColumn="1A3ABBB4-7DF9-C883-DE03-388CB264B383"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1986C2FF-FC8D-5F05-0F30-D8EB4201C44B" name="USUARIO_ROL__IDX">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12FBA4F1-3F74-B9F5-12A5-1417A8E0E57B"/>
+<colUsage columnID="3AE4631D-3406-A208-16E7-19A74E393C9B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0C406C4D-7CC6-29DE-59E1-838C020E7365" name="FK_ASS_1">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<generatorID>BFA9F75F-A40E-C315-4595-913129A08225</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12FBA4F1-3F74-B9F5-12A5-1417A8E0E57B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C89752B6-7E28-564B-F505-18F3F13DA3A4" name="FK_ASS_2">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:43 UTC</createdTime>
+<generatorID>BFA9F75F-A40E-C315-4595-913129A08225</generatorID>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3AE4631D-3406-A208-16E7-19A74E393C9B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

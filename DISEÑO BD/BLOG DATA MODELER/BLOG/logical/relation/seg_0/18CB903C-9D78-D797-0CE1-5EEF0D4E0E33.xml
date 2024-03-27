@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="READERS_BLOG_READERS" directorySegmentName="seg_0" id="18CB903C-9D78-D797-0CE1-5EEF0D4E0E33">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:48:13 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="true"/>
+</engineerTo>
+<sourcePk>90566AFE-0FD3-65BD-4835-ACBD3011ABBA</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>AAF0570A-C22C-3910-AD97-E8BF9643D192</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9CFD2D85-EAC8-D787-DF1E-94AF4DDE04C1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

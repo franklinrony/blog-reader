@@ -1,0 +1,36 @@
+# Batch script to configure the security domain and define the database query used to authenticate users
+batch
+
+
+# Start by creating the JDBC datasource
+/subsystem=datasources/data-source=blogSecurityDS:add(connection-url="jdbc:oracle:thin:@localhost:1521:xe", jndi-name="java:/blogSecurityDS", driver-name=oracle, user-name="SISTEMAS", password="SISTEMAS")
+
+# Add the JDBC security realm creation
+#Comment out the following line if using hex encoding or modular crypt passwords
+#/subsystem=elytron/jdbc-realm=servlet-security-jdbc-realm:add(principal-query=[{sql="SELECT PASSWORD, SALT, ITERATION_COUNT FROM USERS WHERE USERNAME = ?", data-source="blogSecurityDS", bcrypt-mapper={password-index=1, salt-index=2, iteration-count-index=3}},{sql="SELECT R.NAME, 'Roles' FROM USERS_ROLES UR INNER JOIN ROLES R ON R.ID = UR.ROLE_ID INNER JOIN USERS U ON U.ID = UR.USER_ID WHERE U.USERNAME = ?", data-source="blogSecurityDS", attribute-mapping=[{index=1, to=roles}]}])
+
+#Uncomment the following line for hex encoding
+#/subsystem=elytron/jdbc-realm=servlet-security-jdbc-realm:add(principal-query=[{sql="SELECT PASSWORD, SALT, ITERATION_COUNT FROM USERS WHERE USERNAME = ?", data-source="blogSecurityDS", bcrypt-mapper={password-index=1, hash-encoding=hex, salt-index=2, salt-encoding=hex, iteration-count-index=3}},{sql="SELECT R.NAME, 'Roles' FROM USERS_ROLES UR INNER JOIN ROLES R ON R.ID = UR.ROLE_ID INNER JOIN USERS U ON U.ID = UR.USER_ID WHERE U.USERNAME = ?", data-source="blogSecurityDS", attribute-mapping=[{index=1, to=roles}]}])
+
+#Uncomment the following line for modular crypt passwords
+/subsystem=elytron/jdbc-realm=sistemasRealm:add(principal-query=[{sql="SELECT PASSWORD FROM USUARIO WHERE USUARIO = ?", data-source="blogSecurityDS", modular-crypt-mapper={password-index=1}},{sql="SELECT R.DESCRIPCION, 'Roles' FROM USUARIO_ROL UR INNER JOIN ROL R ON R.ID = UR.ROL_ID INNER JOIN USUARIO U ON U.ID = UR.USUARIO_ID WHERE U.USUARIO = ?", data-source="blogSecurityDS", attribute-mapping=[{index=1, to=roles}]}])
+
+# Add a simple role decoder for the "roles" attribute mapping
+/subsystem=elytron/simple-role-decoder=from-roles-attribute:add(attribute=roles)
+
+# Configure the servlet-security-quickstart security domain
+/subsystem=elytron/security-domain=sistemasDomain-sd:add(default-realm=sistemasRealm, realms=[{realm=sistemasRealm, role-decoder=from-roles-attribute}], permission-mapper=default-permission-mapper)
+
+# Configure the HTTP Authentication Factory
+/subsystem=elytron/http-authentication-factory=sistemas-http-auth:add(http-server-mechanism-factory=global,security-domain=sistemasDomain-sd,mechanism-configurations=[{mechanism-name=FORM,mechanism-realm-configurations=[{realm-name=sistemasRealm}]}])
+
+# Configure Undertow's application security domain
+/subsystem=undertow/application-security-domain=sistemasDomain-sd:add(http-authentication-factory=sistemas-http-auth)
+
+# Run the batch commands
+run-batch
+
+# Reload the server configuration
+reload
+
+

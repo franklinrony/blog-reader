@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="USUARIO_ROL" directorySegmentName="seg_0" id="BFA9F75F-A40E-C315-4595-913129A08225">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 03:10:14 UTC</createdTime>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<engineerTo>
+<item key="9F763581-4EBB-43E8-EE38-7FC3862801C6" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>6A4A28B1-9B5F-D425-0F56-02B1534F1F27</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>35472375-C642-E9C5-CD58-A9227347BF94</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

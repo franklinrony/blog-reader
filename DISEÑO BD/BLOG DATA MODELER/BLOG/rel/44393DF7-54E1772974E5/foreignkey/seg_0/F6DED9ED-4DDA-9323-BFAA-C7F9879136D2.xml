@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F6DED9ED-4DDA-9323-BFAA-C7F9879136D2" name="BLOGS_READERS_READERS_FK">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:51:47 UTC</createdTime>
+<generatorID>18CB903C-9D78-D797-0CE1-5EEF0D4E0E33</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<containerWithKeyObject>D1B29C68-8B10-6D86-1419-E24459EE35D6</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>A80A0350-7F64-FD70-0DFE-DFE37C86709A</localFKIndex>
+<keyObject>465E38C6-9BD8-58B2-2BB2-077FDE0CAAD8</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

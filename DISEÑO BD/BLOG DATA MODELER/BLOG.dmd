@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="BLOG" id="CC637B67-FC86-8548-196E-E8E04F4FE419" version="3.5">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 20:58:49 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>CC637B67-FC86-8548-196E-E8E04F4FE419</designId>
+</OSDM_Design>

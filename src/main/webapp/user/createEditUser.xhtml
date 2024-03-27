@@ -13,31 +13,41 @@ and open the template in the editor.
       xmlns:p="http://primefaces.org/ui"> 
     <ui:composition>
 
-        <p:dialog id="createEditDlg" widgetVar="createEditDlg" modal="true" resizable="false" appendTo="@(body)" header="#{readerController.readerSeleccionado.id!= null ? 'EDICION':'CREACION'} DE READER">
+        <p:dialog id="createEditDlg" widgetVar="createEditDlg" modal="true" resizable="false" appendTo="@(body)" header="#{usuarioController.usuarioSeleccionado.id!= null ? 'EDICION':'CREACION'} DE USUARIO">
             <p:messages id="message" showDetail="true" showSummary="false"   closable="true">
                 <p:autoUpdate />
             </p:messages>    
             <h:form id="crearEditarForm">
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="2" rendered="#{readerController.readerSeleccionado!= null}" styleClass="ui-panelgrid-blank ui-fluid">
-                        <p:outputLabel  style="font-weight: bold;" value="Id" rendered="#{readerController.readerSeleccionado.id!= null}"/>
-                        <p:outputLabel  style="width: 300px;" value="#{readerController.readerSeleccionado.id}"  rendered="#{readerController.readerSeleccionado.id != null}"/>                                                 
+                    <p:panelGrid columns="2" rendered="#{usuarioController.usuarioSeleccionado!= null}" styleClass="ui-panelgrid-blank ui-fluid">
+                        <p:outputLabel  style="font-weight: bold;" value="Id" rendered="#{usuarioController.usuarioSeleccionado.id!= null}"/>
+                        <p:outputLabel  style="width: 300px;" value="#{usuarioController.usuarioSeleccionado.id}"  rendered="#{usuarioController.usuarioSeleccionado.id != null}"/>                                                 
 
-                        <p:outputLabel for="nombre" style="font-weight: bold;" value="Nombre Reader"  />
-                        <p:inputText id="nombre"  value="#{readerController.readerSeleccionado.name}"/>                   
-
-
-
+                        <p:outputLabel for="nombres" style="font-weight: bold;" value="Nombres"  />
+                        <p:inputText id="nombres"  value="#{usuarioController.usuarioSeleccionado.nombres}"/>
+                        
+                        <p:outputLabel for="apellidos" style="font-weight: bold;" value="apellidos"  />
+                        <p:inputText id="apellidos"  value="#{usuarioController.usuarioSeleccionado.apellidos}"/>
+                        
+                        <p:outputLabel for="usuario" style="font-weight: bold;" value="usuario"  />
+                        <p:inputText id="usuario"  value="#{usuarioController.usuarioSeleccionado.usuario}"/>
+                        
+                        <p:outputLabel for="email" style="font-weight: bold;" value="email"  />
+                        <p:inputText id="email"  value="#{usuarioController.usuarioSeleccionado.email}"/>
+                        
+                        <p:outputLabel for="password" style="font-weight: bold;" value="password"  />
+                        <p:inputText id="password"  value="#{usuarioController.usuarioSeleccionado.password}"/>
                     </p:panelGrid>
+                    
                     <h:panelGroup class="flex align-items-center justify-content-center">
-                        <p:commandButton   rendered="#{readerController.readerSeleccionado.id == null}"  actionListener="#{readerController.crear()}" 
-                                           value="Guardar" icon="fa fa-fw fa-save"  update="message, frmReader" oncomplete="PF('blockUI').hide();" 
+                        <p:commandButton   rendered="#{usuarioController.usuarioSeleccionado.id == null}"  actionListener="#{usuarioController.crear()}" 
+                                           value="Guardar" icon="fa fa-fw fa-save"  update="message, frmUsuario" oncomplete="PF('blockUI').hide();" 
                                            styleClass="m-2" onstart="PF('blockUI').show();"/>
                         <p:commandButton   rendered="#{readerController.readerSeleccionado.id!= null}" actionListener="#{readerController.editar()}" 
-                                           value="Editar" icon="fa fa-fw fa-edit"  update="message, frmReader" oncomplete="PF('blockUI').hide();"
+                                           value="Editar" icon="fa fa-fw fa-edit"  update="message, frmUsuario" oncomplete="PF('blockUI').hide();"
                                           styleClass="m-2" onstart="PF('blockUI').show();"/>
                         <p:commandButton immediate="true" onclick="PF('createEditDlg').hide()"  actionListener="#{readerController.init()}"
-                                         value="Cancelar" icon="fa fa-fw fa-close"   update="frmReader" oncomplete="PF('blockUI').hide();" 
+                                         value="Cancelar" icon="fa fa-fw fa-close"   update="frmUsuario" oncomplete="PF('blockUI').hide();" 
                                          styleClass="m-2" onstart="PF('blockUI').show();"/>
                     </h:panelGroup>
                 </h:panelGroup>

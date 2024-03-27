@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B454B767-E078-E9CD-A504-8CD287912AF4" name="SECUENCIAS">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:06:07 UTC</createdTime>
+<generatorID>09877997-FE3B-CEC1-7745-2D433325C898</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="7C8D75CE-24E0-DD7A-D71F-F3D3F1CB0264">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:06:07 UTC</createdTime>
+<generatorID>ED7D02D3-B077-821A-418D-913557C27349</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE" id="01CB894B-0410-6ED4-CA03-9A99393428F0">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:06:07 UTC</createdTime>
+<generatorID>0D1E76CF-4187-4C82-D699-9C089482CAD5</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VALOR" id="2736A112-4CE3-DFDF-350F-1E159DC238E9">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:18:53 UTC</createdTime>
+<generatorID>DF82923F-A40A-48B0-6242-03302D7482F7</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5AD97E66-6E76-EDF2-044B-B447E3C5E949" name="SECUENCIAS_PK">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:06:07 UTC</createdTime>
+<generatorID>6FF5DA7C-D326-6AF2-3B9A-16BBF3D00715</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7C8D75CE-24E0-DD7A-D71F-F3D3F1CB0264"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

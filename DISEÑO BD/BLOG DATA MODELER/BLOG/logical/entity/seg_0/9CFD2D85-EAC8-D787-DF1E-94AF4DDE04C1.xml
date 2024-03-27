@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9CFD2D85-EAC8-D787-DF1E-94AF4DDE04C1" name="BLOGS_READERS">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:47:34 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="R_ID" id="8C014A22-92E9-BD64-7B5C-C644D1DF1C8B">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:48:13 UTC</createdTime>
+<generatorID>18CB903C-9D78-D797-0CE1-5EEF0D4E0E33</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="true"/>
+</engineerTo>
+<referedAttribute>58519058-4F3F-A4C1-CD4C-88009811FFBA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="B_ID" id="5CD2F74E-6C16-6880-F24D-F67EA00BCB2D">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:49:01 UTC</createdTime>
+<generatorID>77B213B7-472C-53AA-E3DF-30A9CA8BF72E</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="true"/>
+</engineerTo>
+<referedAttribute>5AEC75C4-4A8B-BF16-7128-39E5F3F7B0DD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+</attributes>
+</Entity>

@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="09877997-FE3B-CEC1-7745-2D433325C898" name="SECUENCIAS">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:03:33 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="ED7D02D3-B077-821A-418D-913557C27349">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:04:03 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="NOMBRE" id="0D1E76CF-4187-4C82-D699-9C089482CAD5">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:04:16 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+</Attribute>
+<Attribute name="VALOR" id="DF82923F-A40A-48B0-6242-03302D7482F7">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:16:40 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6FF5DA7C-D326-6AF2-3B9A-16BBF3D00715" name="SECUENCIAS PK">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 23:04:14 UTC</createdTime>
+<ownerDesignName>BLOG</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44393DF7-AB60-E1EA-7583-54E1772974E5" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>ED7D02D3-B077-821A-418D-913557C27349</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

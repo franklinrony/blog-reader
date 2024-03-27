@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F8A402DA-D991-86E2-BE89-778E1514A8B8" name="BLOGS">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:51:45 UTC</createdTime>
+<generatorID>9771EAD9-B85A-B253-5C7B-B2CC98B022BA</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="4F8DDDC2-BF29-1542-4D27-728DFB980415">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:51:46 UTC</createdTime>
+<generatorID>5AEC75C4-4A8B-BF16-7128-39E5F3F7B0DD</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TITLE" id="737FBBC9-5392-251E-6C84-08F5BF4E652E">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:51:46 UTC</createdTime>
+<generatorID>13999702-E5B1-0211-4FF9-090F9153A687</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPTION" id="3BF0111D-668D-18CB-0294-988465B27753">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:51:46 UTC</createdTime>
+<generatorID>BAC75769-9DE9-A17E-0758-1A4D9791E85F</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="59E1866E-4645-AC76-3565-DFB715A1F86F" name="BLOGS_PK">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-08 22:51:46 UTC</createdTime>
+<generatorID>F1197DD5-90F7-FBBA-66D7-0A4A93FAA371</generatorID>
+<ownerDesignName>BLOG</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4F8DDDC2-BF29-1542-4D27-728DFB980415"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

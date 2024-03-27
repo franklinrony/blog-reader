@@ -1,0 +1,83 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">Usuarios y Roles</ui:define>
+
+    <ui:define name="viewname">
+        <li>Home</li> 
+        <li><i class="pi pi-angle-right"/></li>
+        <li><p:link outcome="/reader/readerList">Roles y Usuarios</p:link></li>
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="grid">
+            <div class="col-12">
+
+                    <div class="card">
+                        <h4>ADMINISTRACION ROLES Y USUARIOS</h4>
+                        <h:form id="frmUsuario">
+                            <p:panel header="Listado de usuarios">
+                                <p:dataTable   id="datalist" value="#{usuarioController.listaUsuarios}" var="usuario"  
+                                               selectionMode="single" selection="#{usuarioController.usuarioSeleccionado}"
+                                               paginator="true"
+                                               rowKey="#{reader.id}"
+                                               rows="10"
+                                               rowsPerPageTemplate="10,20,30,40,50"
+                                               emptyMessage="No se encontraron registros"
+                                               reflow="true">
+
+                                    <p:ajax event="rowSelect"   update="btnCrear btnBorrar btnEditar"/>
+                                    <p:ajax event="rowUnselect" update="btnCrear btnBorrar btnEditar"/>
+                                    <p:messages globalOnly="true"/>
+                                    <p:column headerText="Id"  style="width: 90px; text-align: center;" filterStyle="width: 25%; text-align: center;" 
+                                              sortBy="#{usuario.id}" filterBy="#{usuario.id}">                       
+                                        <p:outputLabel value="#{usuario.id}"/>
+                                    </p:column>                       
+                                    <p:column headerText="Nombres" style="width: 80%; text-align: left" 
+                                              sortBy="#{usuario.nombres}"  filterBy="#{usuario.nombres}">                       
+                                        <p:outputLabel value="#{usuario.nombres}"/>
+                                    </p:column>
+                                      <p:column headerText="Apellidos" style="width: 80%; text-align: left" 
+                                                sortBy="#{usuario.apellidos}"  filterBy="#{usuario.apellidos}">                       
+                                        <p:outputLabel value="#{usuario.apellidos}"/>
+                                    </p:column>   
+                                    <p:column headerText="Usuario" style="width: 80%; text-align: left" 
+                                              sortBy="#{usuario.usuario}"  filterBy="#{usuario.usuario}">                       
+                                        <p:outputLabel value="#{usuario.usuario}"/>
+                                    </p:column>   
+                                     
+
+                                    <f:facet name="footer">
+                                        <div class="flex align-items-center justify-content-center">
+                                            <p:commandButton id="btnCrear" icon="pi pi-user-plus" styleClass="m-2"   value="Nuevo"  
+                                                             resetValues="true" actionListener="#{usuarioController.nuevo()}"  update=":createEditDlg frmUsuario" oncomplete="PF('createEditDlg').show()"/>
+                                            <p:commandButton id="btnEditar"   icon="pi pi-user-edit" styleClass="m-2" value="Editar"  
+                                                             resetValues="true" update=":createEditDlg" oncomplete="PF('createEditDlg').show()" disabled="#{empty readerController.readerSeleccionado}"/>
+                                            <p:commandButton id="btnBorrar" styleClass="ui-button-danger"  icon="pi pi-user-minus" value="Borrar" update=":createEditDlg frmUsuario"  actionListener="#{readerController.borrar()}"  onstart="PF('blockUI').show();" oncomplete="PF('blockUI').hide();"
+                                                             disabled="#{empty readerController.readerSeleccionado}">
+                                                <p:confirm header="Confirmacion" message="¿Desea borrar el registro? #{readerController.readerSeleccionado.name}" icon="pi pi-info-circle"/>
+                                            </p:commandButton>
+                                            <!-- Confirmacion dialog -->
+                                            <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350">
+                                                <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+                                                <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" />
+                                            </p:confirmDialog>
+                                        </div>
+                                    </f:facet>
+                                </p:dataTable>
+                            </p:panel>
+
+                        </h:form>
+                        <ui:include src="createEditUser.xhtml"/>   
+
+                    </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>

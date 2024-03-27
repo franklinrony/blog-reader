@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="USUARIO_ROLES" id="ACBC0932-EF5F-0688-8BCF-98C403DCC4D5" version="3.5">
+<createdBy>cash america</createdBy>
+<createdTime>2023-11-13 02:59:05 UTC</createdTime>
+<ownerDesignName>USUARIO_ROLES</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>ACBC0932-EF5F-0688-8BCF-98C403DCC4D5</designId>
+</OSDM_Design>
