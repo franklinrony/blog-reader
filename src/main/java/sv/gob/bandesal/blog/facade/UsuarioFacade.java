@@ -34,7 +34,7 @@ public class UsuarioFacade extends AbstractFacade<Usuario> {
         return em;
     }
 
-    private Usuario getUserByUsername(String user) {
+    public Usuario getUserByUsername(String user) {
         Usuario usuario = new Usuario();
         Query q = em.createQuery("SELECT u FROM Usuario u WHERE u.usuario=:usuario");
         q.setParameter("usuario", user);

@@ -47,7 +47,7 @@ and open the template in the editor.
                                              converterMessage="No se pudo obtener el elemento Seleccionado"
                                              required="true" filter="true" filterMatchMode="contains">                          
                                 <f:converter binding="#{rolConverter}"/>
-                                <f:selectItem itemValue="#{null}" itemLabel="Seleccione un rol"/>
+                                <f:selectItem itemValue="#{null}" noSelectionOption="true" itemLabel="Seleccione un rol"/>
                                 <f:selectItems var="rol" value="#{usuarioController.listaRoles}" 
                                                itemValue="#{rol}" itemLabel="#{rol.descripcion}"/>
                             </p:selectOneMenu> 
@@ -57,10 +57,10 @@ and open the template in the editor.
                             <p:commandButton   rendered="#{usuarioController.usuarioSeleccionado.id == null}"  actionListener="#{usuarioController.crear()}" 
                                                value="Guardar" icon="fa fa-fw fa-save"  update="message, frmUsuario" oncomplete="PF('blockUI').hide();" 
                                                styleClass="m-2" onstart="PF('blockUI').show();"/>
-                            <p:commandButton   rendered="#{readerController.readerSeleccionado.id!= null}" actionListener="#{readerController.editar()}" 
+                            <p:commandButton   rendered="#{usuarioController.usuarioSeleccionado.id!= null}" actionListener="#{usuarioController.editar()}" 
                                                value="Editar" icon="fa fa-fw fa-edit"  update="message, frmUsuario" oncomplete="PF('blockUI').hide();"
                                                styleClass="m-2" onstart="PF('blockUI').show();"/>
-                            <p:commandButton immediate="true" onclick="PF('createEditDlg').hide()"  actionListener="#{readerController.init()}"
+                            <p:commandButton immediate="true" onclick="PF('createEditDlg').hide()"  actionListener="#{usuarioController.init()}"
                                              value="Cancelar" icon="fa fa-fw fa-close"   update="frmUsuario" oncomplete="PF('blockUI').hide();" 
                                              styleClass="m-2" onstart="PF('blockUI').show();"/>
                         </h:panelGroup>

@@ -137,6 +137,9 @@ public class ReaderController implements Serializable {
         return errores;
     }
 
+    public int total(){
+        return readerFacade.count();
+    }
     public List<Reader> getListaReaders() {
         return listaReaders;
     }

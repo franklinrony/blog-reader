@@ -26,7 +26,7 @@
                                 <p:dataTable   id="datalist" value="#{usuarioController.listaUsuarios}" var="usuario"  
                                                selectionMode="single" selection="#{usuarioController.usuarioSeleccionado}"
                                                paginator="true"
-                                               rowKey="#{reader.id}"
+                                               rowKey="#{usuario.id}"
                                                rows="10"
                                                rowsPerPageTemplate="10,20,30,40,50"
                                                emptyMessage="No se encontraron registros"
@@ -51,17 +51,20 @@
                                               sortBy="#{usuario.usuario}"  filterBy="#{usuario.usuario}">                       
                                         <p:outputLabel value="#{usuario.usuario}"/>
                                     </p:column>   
-
+                                    <p:column headerText="Rol" style="width: 80%; text-align: left" 
+                                              sortBy="#{usuario.rolList.get(0).descripcion}"  filterBy="#{usuario.rolList.get(0).descripcion}">                       
+                                        <p:outputLabel value="#{usuario.rolList.get(0).descripcion}"/>
+                                    </p:column>   
 
                                     <f:facet name="footer">
                                         <div class="flex align-items-center justify-content-center">
                                             <p:commandButton id="btnCrear" icon="pi pi-user-plus" styleClass="m-2"   value="Nuevo"  
                                                              resetValues="true" actionListener="#{usuarioController.nuevo()}"  update=":createEditDlg frmUsuario" oncomplete="PF('createEditDlg').show()"/>
                                             <p:commandButton id="btnEditar"   icon="pi pi-user-edit" styleClass="m-2" value="Editar"  
-                                                             resetValues="true" update=":createEditDlg" oncomplete="PF('createEditDlg').show()" disabled="#{empty readerController.readerSeleccionado}"/>
-                                            <p:commandButton id="btnBorrar" styleClass="ui-button-danger"  icon="pi pi-user-minus" value="Borrar" update=":createEditDlg frmUsuario"  actionListener="#{readerController.borrar()}"  onstart="PF('blockUI').show();" oncomplete="PF('blockUI').hide();"
-                                                             disabled="#{empty readerController.readerSeleccionado}">
-                                                <p:confirm header="Confirmacion" message="¿Desea borrar el registro? #{readerController.readerSeleccionado.name}" icon="pi pi-info-circle"/>
+                                                             resetValues="true" update=":createEditDlg" oncomplete="PF('createEditDlg').show()" disabled="#{empty usuarioController.usuarioSeleccionado}"/>
+                                            <p:commandButton id="btnBorrar" styleClass="ui-button-danger"  icon="pi pi-user-minus" value="Borrar" update=":createEditDlg frmUsuario"  actionListener="#{usuarioController.borrar()}"  onstart="PF('blockUI').show();" oncomplete="PF('blockUI').hide();"
+                                                             disabled="#{empty usuarioController.usuarioSeleccionado}">
+                                                <p:confirm header="Confirmacion" message="¿Desea borrar el registro? #{usuarioController.usuarioSeleccionado.usuario}" icon="pi pi-info-circle"/>
                                             </p:commandButton>
                                             <!-- Confirmacion dialog -->
                                             <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350">

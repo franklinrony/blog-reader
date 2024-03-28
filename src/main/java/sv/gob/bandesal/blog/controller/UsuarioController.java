@@ -101,6 +101,24 @@ public class UsuarioController implements Serializable {
         Matcher matchApellidos = regAlfabetico.matcher(usuarioSeleccionado.getApellidos());
         Matcher matchEmail = regemail.matcher(usuarioSeleccionado.getEmail());
 
+        for (Usuario usuarioAgregar : listaUsuarios) {
+            if (usuarioAgregar!= usuarioSeleccionado) {
+                if (usuarioAgregar.getUsuario().toUpperCase()
+                        .equals(usuarioSeleccionado.getUsuario().toUpperCase().trim())) {
+                    JsfUtil.addErrorMessage("Ya existe un registro con el mismo usuario.");
+                    errores = true;
+                }
+                if (usuarioAgregar.getEmail().toUpperCase()
+                        .equals(usuarioSeleccionado.getEmail().toUpperCase().trim())) {
+                    JsfUtil.addErrorMessage("Ya existe un registro con el mismo email.");
+                    errores = true;
+                }
+            }
+        }
+        if(rolSeleccionado==null){
+            JsfUtil.addErrorMessage("Debe seleccionar un rol.");
+            errores = true;
+        }
         if (usuarioSeleccionado.getNombres().isEmpty()) {
             JsfUtil.addErrorMessage("Nombres no puede estar vacio.");
             errores = true;
@@ -117,11 +135,11 @@ public class UsuarioController implements Serializable {
             JsfUtil.addErrorMessage("El usuario no puede estar vacio.");
             errores = true;
         }
-        if (password.isEmpty()) {
+        if (password.isEmpty() && usuarioSeleccionado.getPassword()==null) {
             JsfUtil.addErrorMessage("Password no puede estar vacio.");
             errores = true;
         }
-        if (rePassword.isEmpty()) {
+        if (rePassword.isEmpty() && usuarioSeleccionado.getPassword()==null) {
             JsfUtil.addErrorMessage("Repetir password no puede estar vacio.");
             errores = true;
         }
@@ -139,7 +157,46 @@ public class UsuarioController implements Serializable {
         }
         return errores;
     }
+    public void editar() {
+        try {
+            if (!validar()) {
+                if(!password.isEmpty()){
+                    //Generar hash del password
+                    usuarioSeleccionado.setPassword(Elytron.hashGenerator(password));
+                }
+               
+                //Setear el rol seleccionado
+                this.agregarRoles();
+                usuarioSeleccionado.setRolList(rolesUsuario);
+                //Editar el objeto
+                usuarioFacade.edit(usuarioSeleccionado);
+                JsfUtil.addSuccessMessage("Usuario actualizado correctamente");
+                PrimeFaces.current().ajax().update("growl");
+                PrimeFaces.current().executeScript("PF('createEditDlg').hide();");
+                init();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JsfUtil.addErrorMessage("Ocurrio un error al intentar editar el usuario, contacte al administrador.");
 
+        }
+    }
+
+    public void borrar() {
+        try {
+     
+                //Borrar el objeto
+                usuarioFacade.remove(usuarioSeleccionado);
+                JsfUtil.addSuccessMessage("usuario borrado correctamente");
+                PrimeFaces.current().ajax().update("growl");
+                init();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            JsfUtil.addErrorMessage("Ocurrio un error al intentar borrar el usuario, contacte al administrador.");
+
+        }
+    }
     public Usuario getUsuarioSeleccionado() {
         return usuarioSeleccionado;
     }

@@ -32,8 +32,8 @@
                                 <p:graphicImage name="images/topbar/avatar-eklund.png" library="mirage-layout" />
                             </span>
                             <span class="profile-info-wrapper">
-                                <h3>Olivia Eklund</h3>
-                                <span>Design</span>
+                                <h3><p:outputLabel value="#{sessionController.nombreUsuarioLogueado}"/></h3>
+                                <span><p:outputLabel value="#{sessionController.rol}"/></span>
                             </span>
                         </a>
                         <ul class="profile-item-submenu">                          
@@ -47,7 +47,12 @@
                                 <i class="pi pi-angle-right"/>
                             </li>
                             <li class="layout-submenu-footer">
-                                <button class="signout-button">Salir</button>
+                                <h:form>
+                                    <p:commandButton  class="signout-button" 
+                                                      action="#{sessionController.logout()}" 
+                                                      value="Salir"/> 
+                                </h:form>
+                           
                             </li>
                         </ul>
                     </li>                    
@@ -60,8 +65,8 @@
                                 <p:graphicImage name="images/topbar/avatar-eklund.png" library="mirage-layout" />
                             </span>
                             <span class="profile-info-wrapper">
-                                <h3>Olivia Eklund</h3>
-                                <span>Design</span>
+                                <h3><p:outputLabel value="#{sessionController.nombreUsuarioLogueado}"/></h3>
+                                <span><p:outputLabel value="#{sessionController.rol}"/></span>
                             </span>
                         </a>
                       

@@ -45,10 +45,12 @@
                                     <f:facet name="footer">
                                         <div class="flex align-items-center justify-content-center">
                                             <p:commandButton id="btnCrear" icon="pi pi-user-plus" styleClass="m-2"   value="Nuevo"  
+                                                             rendered="#{p:ifGranted('ADMIN')}"
                                                              resetValues="true" actionListener="#{readerController.nuevo()}"  update=":createEditDlg frmReader" oncomplete="PF('createEditDlg').show()"/>
                                             <p:commandButton id="btnEditar"   icon="pi pi-user-edit" styleClass="m-2" value="Editar"  
                                                              resetValues="true" update=":createEditDlg" oncomplete="PF('createEditDlg').show()" disabled="#{empty readerController.readerSeleccionado}"/>
-                                            <p:commandButton id="btnBorrar" styleClass="ui-button-danger"  icon="pi pi-user-minus" value="Borrar" update=":createEditDlg frmReader"  actionListener="#{readerController.borrar()}"  onstart="PF('blockUI').show();" oncomplete="PF('blockUI').hide();"
+                                            <p:commandButton id="btnBorrar" styleClass="ui-button-danger"  icon="pi pi-user-minus" value="Borrar" update=":createEditDlg frmReader"  actionListener="#{readerController.borrar()}"  
+                                                             rendered="#{p:ifGranted('ADMIN')}" onstart="PF('blockUI').show();" oncomplete="PF('blockUI').hide();"
                                                              disabled="#{empty readerController.readerSeleccionado}">
                                                 <p:confirm header="Confirmacion" message="¿Desea borrar el registro? #{readerController.readerSeleccionado.name}" icon="pi pi-info-circle"/>
                                             </p:commandButton>

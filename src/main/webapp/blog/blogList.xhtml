@@ -48,11 +48,13 @@
                                 <f:facet name="footer">
                                     <div class="flex align-items-center justify-content-center">
                                         <p:commandButton id="btnCrear" icon="pi pi-book" styleClass="m-2"   value="Nuevo"  
+                                                         rendered="#{p:ifGranted('ADMIN')}"
                                                          resetValues="true" actionListener="#{blogController.nuevo()}"  update=":createEditDlg frmBlog" oncomplete="PF('createEditDlg').show()"/>
                                         <p:commandButton id="btnEditar"   icon="pi pi-pencil" styleClass="m-2" value="Editar"  
                                                          resetValues="true" update=":createEditDlg" oncomplete="PF('createEditDlg').show()" 
                                                          disabled="#{empty blogController.blogSeleccionado}"/>
                                         <p:commandButton id="btnBorrar" styleClass="ui-button-danger"  icon="pi pi-minus-circle" value="Borrar" update=":createEditDlg frmBlog"  
+                                                         rendered="#{p:ifGranted('ADMIN')}"
                                                          actionListener="#{blogController.borrar()}"  onstart="PF('blockUI').show();" oncomplete="PF('blockUI').hide();"
                                                          disabled="#{empty blogController.blogSeleccionado}">
                                             <p:confirm header="Confirmacion" message="¿Desea borrar el registro? #{blogController.blogSeleccionado.title}" icon="pi pi-info-circle"/>

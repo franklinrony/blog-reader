@@ -144,6 +144,9 @@ public class BlogController implements Serializable {
         return errores;
     }
 
+    public int total(){
+        return blogFacade.count();
+    }
     public List<Blog> getListaBlogs() {
         return listaBlogs;
     }
