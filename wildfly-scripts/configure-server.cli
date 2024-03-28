@@ -19,13 +19,17 @@ batch
 /subsystem=elytron/simple-role-decoder=from-roles-attribute:add(attribute=roles)
 
 # Configure the servlet-security-quickstart security domain
-/subsystem=elytron/security-domain=sistemasDomain-sd:add(default-realm=sistemasRealm, realms=[{realm=sistemasRealm, role-decoder=from-roles-attribute}], permission-mapper=default-permission-mapper)
+/subsystem=elytron/security-domain=sistemasDomain:add(default-realm=sistemasRealm, realms=[{realm=sistemasRealm, role-decoder=from-roles-attribute}], permission-mapper=default-permission-mapper)
 
 # Configure the HTTP Authentication Factory
-/subsystem=elytron/http-authentication-factory=sistemas-http-auth:add(http-server-mechanism-factory=global,security-domain=sistemasDomain-sd,mechanism-configurations=[{mechanism-name=FORM,mechanism-realm-configurations=[{realm-name=sistemasRealm}]}])
+/subsystem=elytron/http-authentication-factory=sistemas-http-auth:add(http-server-mechanism-factory=global,security-domain=sistemasDomain,mechanism-configurations=[{mechanism-name=FORM,mechanism-realm-configurations=[{realm-name=sistemasRealm}]}])
 
 # Configure Undertow's application security domain
-/subsystem=undertow/application-security-domain=sistemasDomain-sd:add(http-authentication-factory=sistemas-http-auth)
+/subsystem=undertow/application-security-domain=sistemasDomain:add(http-authentication-factory=sistemas-http-auth)
+
+# Security ejb3
+/subsystem=ejb3/application-security-domain=sistemasDomain-ejb3:add(security-domain=sistemasDomain)
+
 
 # Run the batch commands
 run-batch

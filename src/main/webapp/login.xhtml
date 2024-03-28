@@ -9,7 +9,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
             <meta name="apple-mobile-web-app-capable" content="yes" />
         </f:facet>
-        <title>PrimeFaces Mirage</title>
+        <title>BANDESAL-login</title>
         <h:outputScript name="js/layout.js" library="mirage-layout" />
 
         <script type="text/javascript">
@@ -41,30 +41,28 @@
             <div class="login-panel">
                 <div class="login-panel-content">
                     <div class="logo">
-                        <p:graphicImage name="images/logo-mirage@2x.png" library="mirage-layout" />
+                        <p:graphicImage name="images/LogoBANDESAL_.png" library="mirage-layout" />
                     </div>
-                    <h1>Sign in to Mirage</h1>
-                    <p>Welcome, please use the form to sign-in Mirage network</p>
-                    <h:form styleClass="forms">
+                    <h1>SISTEMA BLOGS-BANDESAL</h1>
+                    <p>Bienvenido. Por favor ingresa el usuario y clave provistos para el sistema</p>
+                    <h:form styleClass="forms" id="frmLogin" 
+                            onsubmit="document.getElementById('frmLogin').action='j_security_check';"  prependId="false" >
                         <div class="login-input-wrapper">
-                            <p:outputLabel for="username" value="Username" />
-                            <p:inputText id="username" placeholder="Type your username..." />
+                            <p:outputLabel for="j_username" value="Usuario" />
+                            <p:inputText id="j_username"  placeholder="Escribe tu usuario" />
                             <i class="pi pi-user"/>
                         </div>
 
                         <div class="login-input-wrapper">
-                            <p:outputLabel for="password" value="Password" />
-                            <p:password id="password" placeholder="Type your password" feedback="false" />
+                            <p:outputLabel for="j_password" value="Password" />
+                            <p:password id="j_password" placeholder="Escribe tu password" feedback="false" />
                             <i class="pi pi-lock"/>
                         </div>
 
-                        <p:selectManyCheckbox layout="responsive" columns="1">
-                            <f:selectItem itemLabel="Remember me" itemValue="SaveInfo" />
-                        </p:selectManyCheckbox>
+                      
 
                         <div class="buttons">
-                            <p:commandButton value="Login" />
-                            <p:commandButton value="Forget password" styleClass="ui-button-secondary" />
+                            <p:commandButton value="Login"  ajax="false"/>
                         </div>
                     </h:form>
                 </div>

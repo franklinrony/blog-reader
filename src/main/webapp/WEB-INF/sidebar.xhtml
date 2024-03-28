@@ -21,7 +21,7 @@
             <h:form id="menuform">
                 <pm:menu>
                     <p:menuitem id="m_inicio" value="Inicio" icon="pi pi-fw pi-home" outcome="/dashboard" />              
-                    <p:menuitem id="m_usuarios_roles" value="Usuarios y Roles" icon="pi pi-fw pi-unlock" outcome="/user/userList" />              
+                    <p:menuitem id="m_usuarios_roles" rendered="#{p:ifGranted('ADMIN')}" value="Usuarios y Roles" icon="pi pi-fw pi-unlock" outcome="/user/userList" />              
                     <p:menuitem id="m_lectores" value="Lectores" icon="pi pi-fw pi-users" outcome="/reader/readerList" />
                     <p:menuitem id="m_blogs" value="Blogs" icon="pi pi-fw pi-book" outcome="/blog/blogList" />
                     <p:menuitem id="m_lect_blog" value="Lectores por blog" icon="pi pi-fw pi-list" outcome="/blogReader/blogReaderList" />

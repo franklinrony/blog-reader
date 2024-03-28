@@ -10,14 +10,16 @@
     <ui:define name="viewname">
         <li>Home</li> 
         <li><i class="pi pi-angle-right"/></li>
-        <li><p:link outcome="/reader/readerList">Roles y Usuarios</p:link></li>
+        <li><p:link outcome="/user/userList">Roles y Usuarios</p:link></li>
     </ui:define>
 
     <ui:define name="content">
         <div class="grid">
             <div class="col-12">
 
-                    <div class="card">
+                <div class="card">
+                    <p:panel rendered="#{p:ifGranted('ADMIN')}">
+
                         <h4>ADMINISTRACION ROLES Y USUARIOS</h4>
                         <h:form id="frmUsuario">
                             <p:panel header="Listado de usuarios">
@@ -41,15 +43,15 @@
                                               sortBy="#{usuario.nombres}"  filterBy="#{usuario.nombres}">                       
                                         <p:outputLabel value="#{usuario.nombres}"/>
                                     </p:column>
-                                      <p:column headerText="Apellidos" style="width: 80%; text-align: left" 
-                                                sortBy="#{usuario.apellidos}"  filterBy="#{usuario.apellidos}">                       
+                                    <p:column headerText="Apellidos" style="width: 80%; text-align: left" 
+                                              sortBy="#{usuario.apellidos}"  filterBy="#{usuario.apellidos}">                       
                                         <p:outputLabel value="#{usuario.apellidos}"/>
                                     </p:column>   
                                     <p:column headerText="Usuario" style="width: 80%; text-align: left" 
                                               sortBy="#{usuario.usuario}"  filterBy="#{usuario.usuario}">                       
                                         <p:outputLabel value="#{usuario.usuario}"/>
                                     </p:column>   
-                                     
+
 
                                     <f:facet name="footer">
                                         <div class="flex align-items-center justify-content-center">
@@ -73,8 +75,12 @@
 
                         </h:form>
                         <ui:include src="createEditUser.xhtml"/>   
+                    </p:panel>
 
-                    </div>
+                    <p:panel rendered="#{!p:ifGranted('ADMIN')}">
+                        <p>No tienes permiso para ver esta pagina</p>
+                    </p:panel>
+                </div>
             </div>
         </div>
 
